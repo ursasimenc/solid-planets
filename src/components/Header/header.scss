@@ -1,0 +1,195 @@
+@import "../../index.scss";
+
+h1 {
+	font-size: 28px;
+}
+
+nav {
+	@include flex(space-between, center, 0, column);
+
+	.top {
+		@include flex(space-between, center);
+	}
+
+	.bottom {
+		ul {
+			list-style: none;
+
+			li {
+				text-transform: uppercase;
+				font-weight: 700;
+				font-size: 15px;
+				line-height: 25px;
+				cursor: pointer;
+			}
+		}
+	}
+}
+
+#Mercury::before {
+	background-color: $color-mercury;
+}
+
+#Venus::before {
+	background-color: $color-venus;
+}
+
+#Earth::before {
+	background-color: $color-earth;
+}
+
+#Mars::before {
+	background-color: $color-mars;
+}
+
+#Jupiter::before {
+	background-color: $color-jupiter;
+}
+
+#Saturn::before {
+	background-color: $color-saturn;
+}
+
+#Uranus::before {
+	background-color: $color-uranus;
+}
+
+#Neptune::before {
+	background-color: $color-neptune;
+}
+
+@media screen and (max-width: 679px) {
+	.top {
+		@include size(100vw, 80px);
+		padding: 0rem 2rem;
+		border-bottom: 1px solid rgba(white, 0.2);
+
+		svg {
+			cursor: pointer;
+
+			g {
+				@include transition(fill);
+				&.active {
+					fill: $color-border;
+				}
+			}
+		}
+	}
+	.bottom {
+		position: relative;
+		left: 100vw;
+		@include transition(left);
+
+		ul {
+			@include size(100vw, fit-content);
+			padding: 0.5rem 2rem;
+			li {
+				@include flex(start, center);
+				@include size(100%, 56px);
+				border-bottom: 1px solid rgba(white, 0.1);
+				margin-top: 0.25rem;
+				position: relative;
+
+				&::before {
+					content: "";
+					background-color: $color-white;
+					margin-right: 1rem;
+					border-radius: 50%;
+					position: relative;
+					bottom: 2px;
+					@include size(20px);
+				}
+
+				svg {
+					position: absolute;
+					right: 6px;
+
+					g {
+						@include transition(fill);
+					}
+				}
+			}
+		}
+
+		&.active {
+			left: 0;
+		}
+	}
+}
+
+@media screen and (max-width: 1024px) and (min-width: 680px) {
+	nav {
+		@include size(100vw, 120px);
+		@include flex(space-evenly, center, 0, column);
+		border-bottom: 1px solid rgba(white, 0.2);
+	}
+
+	.top {
+		svg {
+			display: none;
+		}
+	}
+
+	.bottom {
+		ul {
+			@include flex(space-between, center, 1.25rem);
+
+			li {
+				font-size: 11px;
+				color: $color-text;
+
+				svg {
+					display: none;
+				}
+
+				&:hover {
+					color: $color-white;
+				}
+			}
+		}
+	}
+}
+
+@media screen and (min-width: 1025px) {
+	nav {
+		@include flex(space-between, center);
+		@include size(100vw, 80px);
+		padding: 0 2rem;
+
+		.top {
+			svg {
+				display: none;
+			}
+		}
+
+		.bottom {
+			ul {
+				@include flex(space-evenly, center, 2.5rem);
+
+				li {
+					color: $color-text;
+					position: relative;
+					svg {
+						display: none;
+					}
+
+					&:hover {
+						color: $color-white;
+					}
+
+					&::before {
+						content: "";
+						position: absolute;
+						bottom: 53px;
+						@include transition(bottom);
+						@include size(100%, 5px);
+					}
+
+					&:hover::before {
+						bottom: 48px;
+					}
+				}
+			}
+		}
+	}
+}

@@ -1,3 +1,14 @@
-.header {
-  color: red;
+@import "./index.scss";
+
+body {
+	@include size(100vw, 100vh);
+	background-color: $color-darkblue;
+	overflow: hidden;
+	color: $color-white;
+
+	.wrapper {
+		background-image: url("./assets/background-stars.svg");
+		@include size(100vw, 100vh);
+		overflow: hidden;
+	}
 }
