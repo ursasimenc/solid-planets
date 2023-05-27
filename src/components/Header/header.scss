@@ -1,5 +1,11 @@
 @import "../../index.scss";
 
+header {
+	background-color: $color-darkblue;
+	position: absolute;
+	@include size(100vw, auto);
+}
+
 h1 {
 	font-size: 28px;
 }
@@ -59,26 +65,37 @@ nav {
 }
 
 @media screen and (max-width: 679px) {
+	nav {
+		@include size(100vw, 80px);
+	}
+
 	.top {
 		@include size(100vw, 80px);
-		padding: 0rem 2rem;
+		padding: 0rem 0rem 0rem 2rem;
 		border-bottom: 1px solid rgba(white, 0.2);
+		background-color: $color-darkblue;
+		z-index: 2;
 
-		svg {
+		.hamburger {
+			@include size(80px);
+			@include flex(center, center);
 			cursor: pointer;
-
-			g {
-				@include transition(fill);
-				&.active {
-					fill: $color-border;
+			svg {
+				g {
+					@include transition(fill);
+					&.active {
+						fill: $color-border;
+					}
 				}
 			}
 		}
 	}
 	.bottom {
 		position: relative;
-		left: 100vw;
-		@include transition(left);
+		bottom: 135vw;
+		z-index: 1;
+		background-color: $color-darkblue;
+		@include transition(bottom);
 
 		ul {
 			@include size(100vw, fit-content);
@@ -112,7 +129,7 @@ nav {
 		}
 
 		&.active {
-			left: 0;
+			bottom: 0;
 		}
 	}
 }

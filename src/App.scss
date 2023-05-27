@@ -6,9 +6,222 @@ body {
 	overflow: hidden;
 	color: $color-white;
 
+	&::-webkit-scrollbar {
+		width: 0.2em;
+	}
+
+	&::-webkit-scrollbar-thumb {
+		background-color: $color-white;
+	}
+
 	.wrapper {
 		background-image: url("./assets/background-stars.svg");
 		@include size(100vw, 100vh);
 		overflow: hidden;
+
+		&::-webkit-scrollbar {
+			width: 0.2em;
+		}
+
+		&::-webkit-scrollbar-thumb {
+			background-color: $color-white;
+		}
+	}
+}
+
+#planet {
+	@include size(100%, 100%);
+	max-height: calc(100vh - 80px);
+	overflow: auto;
+	position: absolute;
+	bottom: 0;
+
+	&::-webkit-scrollbar {
+		width: 0.2em;
+	}
+
+	&::-webkit-scrollbar-thumb {
+		background-color: $color-white;
+	}
+
+	#planet-content {
+		@include flex(start, center, 0, column);
+		width: 100%;
+		aspect-ratio: 1/1;
+
+		#planet-image {
+			@include flex(center, center);
+			width: 100%;
+			aspect-ratio: 1/1;
+			position: relative;
+
+			.geology {
+				@include size(100px, auto);
+				position: absolute;
+				bottom: 5rem;
+			}
+		}
+
+		#planet-info {
+			@include flex(start, center, 1rem, column);
+
+			p {
+				color: $color-text;
+				max-width: 80%;
+				text-align: center;
+				line-height: 22px;
+			}
+
+			.link {
+				@include flex(space-evenly, center);
+				@include size(50%, 52px);
+
+				a {
+					color: $color-text;
+					letter-spacing: 1.93px;
+					font-weight: 700;
+				}
+			}
+		}
+
+		#planet-stats {
+			@include size(100%, fit-content);
+			@include flex(start, center, 0.5rem, column);
+			margin-block: 1.5rem;
+			.stat {
+				border: 1px solid rgba(white, 0.2);
+				@include flex(space-between, center);
+				@include size(80%, 52px);
+				padding: 0 1rem;
+
+				h3 {
+					color: $color-text;
+					font-size: 10px;
+					line-height: 16px;
+					letter-spacing: 0.73px;
+				}
+
+				h2 {
+					font-size: 20px;
+					letter-spacing: -0.75px;
+				}
+			}
+		}
+	}
+}
+
+@media screen and (min-width: 679px) {
+	#planet {
+		max-height: calc(100% - 120px);
+	}
+	.mobile-tabs {
+		display: none;
+	}
+}
+
+@media screen and (max-width: 679px) {
+	.mobile-tabs {
+		@include size(100%, 52px);
+		@include flex(space-around, center);
+		border-bottom: 1px solid rgba(white, 0.2);
+
+		button {
+			cursor: pointer;
+			position: relative;
+			border: none;
+			background-color: transparent;
+			letter-spacing: 1.93px;
+			font-size: 9px;
+			font-weight: 700;
+			text-transform: uppercase;
+			color: $color-text;
+			@include size(fit-content, 100%);
+
+			&:hover,
+			&:focus {
+				color: $color-white;
+			}
+
+			&::after {
+				content: "";
+				position: absolute;
+				bottom: 0;
+				left: 0;
+				@include transition(background-color);
+				@include size(100%, 5px);
+			}
+		}
+
+		&#Mercury button#active::after {
+			background-color: $color-mercury;
+		}
+
+		&#Venus button#active::after {
+			background-color: $color-venus;
+		}
+
+		&#Earth button#active::after {
+			background-color: $color-earth;
+		}
+
+		&#Mars button#active::after {
+			background-color: $color-mars;
+		}
+
+		&#Jupiter button#active::after {
+			background-color: $color-jupiter;
+		}
+
+		&#Saturn button#active::after {
+			background-color: $color-saturn;
+		}
+
+		&#Uranus button#active::after {
+			background-color: $color-uranus;
+		}
+
+		&#Neptune button#active::after {
+			background-color: $color-neptune;
+		}
+	}
+
+	img#Mercury {
+		width: 111px;
+		aspect-ratio: 1/1;
+	}
+
+	img#Venus {
+		width: 154px;
+		aspect-ratio: 1/1;
+	}
+
+	img#Earth {
+		width: 173px;
+		aspect-ratio: 1/1;
+	}
+
+	img#Mars {
+		width: 129px;
+		aspect-ratio: 1/1;
+	}
+
+	img#Jupiter {
+		width: 224px;
+		aspect-ratio: 1/1;
+	}
+
+	img#Saturn {
+		width: 256px;
+		aspect-ratio: 1/1;
+	}
+
+	img#Uranus {
+		width: 176px;
+		aspect-ratio: 1/1;
+	}
+
+	img#Neptune {
+		width: 173px;
+		aspect-ratio: 1/1;
 	}
 }

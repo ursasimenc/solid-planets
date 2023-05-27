@@ -1,12 +1,17 @@
 import { Component } from "solid-js";
 import "./header.scss";
 
-const Header: Component = () => {
-	const showMobileMenu = (e: any) => {
+export default function Header(props: any) {
+	const showMobileMenu = () => {
 		const bottom = document.querySelector(".bottom") as HTMLElement;
 		const burger = document.querySelector("#g") as HTMLElement;
 		burger.classList.toggle("active");
 		bottom.classList.toggle("active");
+	};
+
+	const clickLink = (planet: number) => {
+		props.setPlanet(planet);
+		showMobileMenu();
 	};
 
 	return (
@@ -14,57 +19,59 @@ const Header: Component = () => {
 			<nav>
 				<div class="top">
 					<h1>the planets</h1>
-					<svg xmlns="http://www.w3.org/2000/svg" width="24" height="17" onClick={showMobileMenu}>
-						<g fill="#FFF" fill-rule="evenodd" id="g">
-							<path d="M0 0h24v3H0zM0 7h24v3H0zM0 14h24v3H0z" />
-						</g>
-					</svg>
+					<div class="hamburger" onClick={showMobileMenu}>
+						<svg xmlns="http://www.w3.org/2000/svg" width="24" height="17">
+							<g fill="#FFF" fill-rule="evenodd" id="g">
+								<path d="M0 0h24v3H0zM0 7h24v3H0zM0 14h24v3H0z" />
+							</g>
+						</svg>
+					</div>
 				</div>
 				<div class="bottom">
 					<ul>
-						<li id="Mercury">
+						<li onClick={() => clickLink(0)} id="Mercury">
 							Mercury
 							<svg xmlns="http://www.w3.org/2000/svg" width="6" height="8">
 								<path fill="none" stroke="#FFF" opacity=".4" d="M1 0l4 4-4 4" />
 							</svg>
 						</li>
-						<li id="Venus">
+						<li onClick={() => clickLink(1)} id="Venus">
 							Venus
 							<svg xmlns="http://www.w3.org/2000/svg" width="6" height="8">
 								<path fill="none" stroke="#FFF" opacity=".4" d="M1 0l4 4-4 4" />
 							</svg>
 						</li>
-						<li id="Earth">
+						<li onClick={() => clickLink(2)} id="Earth">
 							Earth
 							<svg xmlns="http://www.w3.org/2000/svg" width="6" height="8">
 								<path fill="none" stroke="#FFF" opacity=".4" d="M1 0l4 4-4 4" />
 							</svg>
 						</li>
-						<li id="Mars">
+						<li onClick={() => clickLink(3)} id="Mars">
 							Mars
 							<svg xmlns="http://www.w3.org/2000/svg" width="6" height="8">
 								<path fill="none" stroke="#FFF" opacity=".4" d="M1 0l4 4-4 4" />
 							</svg>
 						</li>
-						<li id="Jupiter">
+						<li onClick={() => clickLink(4)} id="Jupiter">
 							Jupiter
 							<svg xmlns="http://www.w3.org/2000/svg" width="6" height="8">
 								<path fill="none" stroke="#FFF" opacity=".4" d="M1 0l4 4-4 4" />
 							</svg>
 						</li>
-						<li id="Saturn">
+						<li onClick={() => clickLink(5)} id="Saturn">
 							Saturn
 							<svg xmlns="http://www.w3.org/2000/svg" width="6" height="8">
 								<path fill="none" stroke="#FFF" opacity=".4" d="M1 0l4 4-4 4" />
 							</svg>
 						</li>
-						<li id="Uranus">
+						<li onClick={() => clickLink(6)} id="Uranus">
 							Uranus
 							<svg xmlns="http://www.w3.org/2000/svg" width="6" height="8">
 								<path fill="none" stroke="#FFF" opacity=".4" d="M1 0l4 4-4 4" />
 							</svg>
 						</li>
-						<li id="Neptune">
+						<li onClick={() => clickLink(7)} id="Neptune">
 							Neptune
 							<svg xmlns="http://www.w3.org/2000/svg" width="6" height="8">
 								<path fill="none" stroke="#FFF" opacity=".4" d="M1 0l4 4-4 4" />
@@ -75,6 +82,4 @@ const Header: Component = () => {
 			</nav>
 		</header>
 	);
-};
-
-export default Header;
+}
