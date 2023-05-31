@@ -171,6 +171,7 @@ nav {
 	nav {
 		@include flex(space-between, center);
 		@include size(100vw, 80px);
+		border-bottom: 1px solid rgba(white, 0.2);
 		padding: 0 2rem;
 
 		.top {

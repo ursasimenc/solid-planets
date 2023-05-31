@@ -138,22 +138,22 @@ export default function Planet(props: any) {
 	return (
 		<div id="planet">
 			<div class="mobile-tabs" id={`${name()}`}>
-				<button onClick={() => setSection("overview")} id={section() === "overview" ? "active" : ""}>
+				<button onClick={() => setSection("overview")} id={section() === "overview" ? "button-active" : "nonactive"}>
 					overview
 				</button>
-				<button onClick={() => setSection("structure")} id={section() === "structure" ? "active" : ""}>
+				<button onClick={() => setSection("structure")} id={section() === "structure" ? "button-active" : "nonactive"}>
 					structure
 				</button>
-				<button onClick={() => setSection("surface")} id={section() === "surface" ? "active" : ""}>
+				<button onClick={() => setSection("surface")} id={section() === "surface" ? "button-active" : "nonactive"}>
 					surface
 				</button>
 			</div>
 			<div id="planet-content">
 				<div class="planet-top">
 					<div id="planet-image">
-						<img src={getImage()} alt={`${name()}`} id={`${name()}`} />
+						<img src={getImage()} alt={`${name()}`} id={`${name()}-photo`} />
 						<Show when={section() === "surface"}>
-							<img src={planetGeologyImage()} alt={`${name()}`} id={`${name()}-geology`} class="geology" />
+							<img src={planetGeologyImage()} alt={`${name()}-geology`} id={`${name()}-geology`} class="geology" />
 						</Show>
 					</div>
 					<div id="planet-parent-info">
@@ -175,13 +175,13 @@ export default function Planet(props: any) {
 							</div>
 						</div>
 						<div class="tabs" id={`${name()}`}>
-							<button onClick={() => setSection("overview")} id={section() === "overview" ? "active" : ""}>
+							<button onClick={() => setSection("overview")} id={section() === "overview" ? "tab-active" : ""}>
 								<span>01</span> overview
 							</button>
-							<button onClick={() => setSection("structure")} id={section() === "structure" ? "active" : ""}>
+							<button onClick={() => setSection("structure")} id={section() === "structure" ? "tab-active" : ""}>
 								<span>02</span> structure
 							</button>
-							<button onClick={() => setSection("surface")} id={section() === "surface" ? "active" : ""}>
+							<button onClick={() => setSection("surface")} id={section() === "surface" ? "tab-active" : ""}>
 								<span>03</span> surface
 							</button>
 						</div>

@@ -156,40 +156,40 @@ body {
 							color: rgba(white, 0.5);
 						}
 
-						&#active {
+						&#tab-active {
 							@include transition(background-color);
 							outline: none;
 						}
 					}
-					&#Mercury button#active {
+					&#Mercury button#tab-active {
 						background-color: $color-mercury;
 					}
 
-					&#Venus button#active {
+					&#Venus button#tab-active {
 						background-color: $color-venus;
 					}
 
-					&#Earth button#active {
+					&#Earth button#tab-active {
 						background-color: $color-earth;
 					}
 
-					&#Mars button#active {
+					&#Mars button#tab-active {
 						background-color: $color-mars;
 					}
 
-					&#Jupiter button#active {
+					&#Jupiter button#tab-active {
 						background-color: $color-jupiter;
 					}
 
-					&#Saturn button#active {
+					&#Saturn button#tab-active {
 						background-color: $color-saturn;
 					}
 
-					&#Uranus button#active {
+					&#Uranus button#tab-active {
 						background-color: $color-uranus;
 					}
 
-					&#Neptune button#active {
+					&#Neptune button#tab-active {
 						background-color: $color-neptune;
 					}
 				}
@@ -269,42 +269,42 @@ body {
 		}
 	}
 
-	img#Mercury {
+	img#Mercury-photo {
 		width: 184px;
 		aspect-ratio: 1/1;
 	}
 
-	img#Venus {
+	img#Venus-photo {
 		width: 253px;
 		aspect-ratio: 1/1;
 	}
 
-	img#Earth {
+	img#Earth-photo {
 		width: 285px;
 		aspect-ratio: 1/1;
 	}
 
-	img#Mars {
+	img#Mars-photo {
 		width: 213px;
 		aspect-ratio: 1/1;
 	}
 
-	img#Jupiter {
+	img#Jupiter-photo {
 		width: 369px;
 		aspect-ratio: 1/1;
 	}
 
-	img#Saturn {
+	img#Saturn-photo {
 		width: 422px;
 		aspect-ratio: 1/1;
 	}
 
-	img#Uranus {
+	img#Uranus-photo {
 		width: 290px;
 		aspect-ratio: 1/1;
 	}
 
-	img#Neptune {
+	img#Neptune-photo {
 		width: 285px;
 		aspect-ratio: 1/1;
 	}
@@ -380,42 +380,42 @@ body {
 		}
 	}
 
-	img#Mercury {
+	img#Mercury-photo {
 		width: 290px;
 		aspect-ratio: 1/1;
 	}
 
-	img#Venus {
+	img#Venus-photo {
 		width: 400px;
 		aspect-ratio: 1/1;
 	}
 
-	img#Earth {
+	img#Earth-photo {
 		width: 450px;
 		aspect-ratio: 1/1;
 	}
 
-	img#Mars {
+	img#Mars-photo {
 		width: 336px;
 		aspect-ratio: 1/1;
 	}
 
-	img#Jupiter {
+	img#Jupiter-photo {
 		width: 582px;
 		aspect-ratio: 1/1;
 	}
 
-	img#Saturn {
+	img#Saturn-photo {
 		width: 666px;
 		aspect-ratio: 1/1;
 	}
 
-	img#Uranus {
+	img#Uranus-photo {
 		width: 458px;
 		aspect-ratio: 1/1;
 	}
 
-	img#Neptune {
+	img#Neptune-photo {
 		width: 450px;
 		aspect-ratio: 1/1;
 	}
@@ -487,35 +487,35 @@ body {
 			}
 		}
 
-		&#Mercury button#active::after {
+		&#Mercury button#button-active::after {
 			background-color: $color-mercury;
 		}
 
-		&#Venus button#active::after {
+		&#Venus button#button-active::after {
 			background-color: $color-venus;
 		}
 
-		&#Earth button#active::after {
+		&#Earth button#button-active::after {
 			background-color: $color-earth;
 		}
 
-		&#Mars button#active::after {
+		&#Mars button#button-active::after {
 			background-color: $color-mars;
 		}
 
-		&#Jupiter button#active::after {
+		&#Jupiter button#button-active::after {
 			background-color: $color-jupiter;
 		}
 
-		&#Saturn button#active::after {
+		&#Saturn button#button-active::after {
 			background-color: $color-saturn;
 		}
 
-		&#Uranus button#active::after {
+		&#Uranus button#button-active::after {
 			background-color: $color-uranus;
 		}
 
-		&#Neptune button#active::after {
+		&#Neptune button#button-active::after {
 			background-color: $color-neptune;
 		}
 	}
@@ -528,42 +528,42 @@ body {
 		}
 	}
 
-	img#Mercury {
+	img#Mercury-photo {
 		width: 111px;
 		aspect-ratio: 1/1;
 	}
 
-	img#Venus {
+	img#Venus-photo {
 		width: 154px;
 		aspect-ratio: 1/1;
 	}
 
-	img#Earth {
+	img#Earth-photo {
 		width: 173px;
 		aspect-ratio: 1/1;
 	}
 
-	img#Mars {
+	img#Mars-photo {
 		width: 129px;
 		aspect-ratio: 1/1;
 	}
 
-	img#Jupiter {
+	img#Jupiter-photo {
 		width: 224px;
 		aspect-ratio: 1/1;
 	}
 
-	img#Saturn {
+	img#Saturn-photo {
 		width: 256px;
 		aspect-ratio: 1/1;
 	}
 
-	img#Uranus {
+	img#Uranus-photo {
 		width: 176px;
 		aspect-ratio: 1/1;
 	}
 
-	img#Neptune {
+	img#Neptune-photo {
 		width: 173px;
 		aspect-ratio: 1/1;
 	}
