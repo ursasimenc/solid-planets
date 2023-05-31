@@ -5,8 +5,8 @@ export default function Header(props: any) {
 	const showMobileMenu = () => {
 		const bottom = document.querySelector(".bottom") as HTMLElement;
 		const burger = document.querySelector("#g") as HTMLElement;
-		burger.classList.toggle("active");
-		bottom.classList.toggle("active");
+		burger.classList.toggle("menu-active");
+		bottom.classList.toggle("nav-link-active");
 	};
 
 	const clickLink = (planet: number) => {

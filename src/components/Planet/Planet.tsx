@@ -175,13 +175,13 @@ export default function Planet(props: any) {
 							</div>
 						</div>
 						<div class="tabs" id={`${name()}`}>
-							<button onClick={() => setSection("overview")} id={section() === "overview" ? "tab-active" : ""}>
+							<button onClick={() => setSection("overview")} id={section() === "overview" ? "tab-active" : "nonactive"}>
 								<span>01</span> overview
 							</button>
-							<button onClick={() => setSection("structure")} id={section() === "structure" ? "tab-active" : ""}>
+							<button onClick={() => setSection("structure")} id={section() === "structure" ? "tab-active" : "nonactive"}>
 								<span>02</span> structure
 							</button>
-							<button onClick={() => setSection("surface")} id={section() === "surface" ? "tab-active" : ""}>
+							<button onClick={() => setSection("surface")} id={section() === "surface" ? "tab-active" : "nonactive"}>
 								<span>03</span> surface
 							</button>
 						</div>
