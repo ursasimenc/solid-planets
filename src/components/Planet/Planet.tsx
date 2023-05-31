@@ -148,14 +148,13 @@ export default function Planet(props: any) {
 					surface
 				</button>
 			</div>
+			<div id="planet-image">
+				<img src={getImage()} alt={`${name()}`} id={`${name()}`} />
+				<Show when={section() === "surface"}>
+					<img src={planetGeologyImage()} alt={`${name()}`} id={`${name()}-geology`} class="geology" />
+				</Show>
+			</div>
 			<div id="planet-content">
-				<div id="planet-image">
-					<img src={getImage()} alt={`${name()}`} id={`${name()}`} />
-					<Show when={section() === "surface"}>
-						<img src={planetGeologyImage()} alt={`${name()}`} id={`${name()}-geology`} class="geology" />
-					</Show>
-				</div>
-
 				<div id="planet-parent-info">
 					<div id="planet-info">
 						<h2>{`${name()}`}</h2>

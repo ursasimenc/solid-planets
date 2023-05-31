@@ -31,6 +31,7 @@ body {
 
 #planet {
 	@include size(100%, 100%);
+	@include flex(space-between, center, 0, column);
 	max-height: calc(100vh - 80px);
 	overflow: auto;
 	position: absolute;
@@ -43,23 +44,20 @@ body {
 	&::-webkit-scrollbar-thumb {
 		background-color: $color-white;
 	}
+	#planet-image {
+		@include flex(center, center);
+		width: 100%;
+		position: relative;
 
+		.geology {
+			@include size(100px, auto);
+			position: absolute;
+			bottom: 5rem;
+		}
+	}
 	#planet-content {
 		@include flex(start, center, 0, column);
 		width: 100%;
-		aspect-ratio: 1/1;
-
-		#planet-image {
-			@include flex(center, center);
-			width: 100%;
-			position: relative;
-
-			.geology {
-				@include size(100px, auto);
-				position: absolute;
-				bottom: 5rem;
-			}
-		}
 
 		#planet-info {
 			p {
@@ -68,7 +66,7 @@ body {
 			}
 
 			.link {
-				@include size(50%, 52px);
+				@include size(50%, fit-content);
 
 				a {
 					@include flex(start, center, 0.25rem);
@@ -123,7 +121,7 @@ body {
 
 	.tabs {
 		@include size(50%, 100%);
-		@include flex(center, center, 0.75rem, column);
+		@include flex(center, end, 0.75rem, column);
 
 		button {
 			cursor: pointer;
@@ -208,12 +206,12 @@ body {
 	}
 
 	#planet-parent-info {
-		@include flex(start, center, 1rem);
+		@include flex(space-between, center, 1rem);
 		margin-inline: 3rem;
 	}
 
 	#planet-image {
-		aspect-ratio: 3/2;
+		aspect-ratio: 1/1;
 	}
 
 	img#Mercury {
