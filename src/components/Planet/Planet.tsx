@@ -27,28 +27,20 @@ import NeptuneGeology from "../../assets/geology-neptune.png";
 
 export default function Planet(props: any) {
 	const [name, setName] = createSignal();
-	const [overview, setOverview] = createSignal();
-	const [structure, setStructure] = createSignal();
-	const [geology, setGeology] = createSignal();
 	const [rotation, setRotation] = createSignal();
 	const [revolution, setRevolution] = createSignal();
 	const [radius, setRadius] = createSignal();
 	const [temperature, setTemperature] = createSignal();
 	const [section, setSection] = createSignal("overview");
-	const [photo, setPhoto] = createSignal();
 	const [content, setContent] = createSignal();
 	const [link, setLink] = createSignal();
 
 	createEffect(() => {
 		setName(data[props.planet].name);
-		setOverview(data[props.planet].overview);
-		setStructure(data[props.planet].structure);
-		setGeology(data[props.planet].geology);
 		setRotation(data[props.planet].rotation);
 		setRevolution(data[props.planet].revolution);
 		setRadius(data[props.planet].radius);
 		setTemperature(data[props.planet].temperature);
-		setPhoto(data[props.planet].images.planet);
 		setContent(data[props.planet].overview.content);
 		setLink(data[props.planet].overview.source);
 
@@ -164,18 +156,34 @@ export default function Planet(props: any) {
 					</Show>
 				</div>
 
-				<div id="planet-info">
-					<h2>{`${name()}`}</h2>
-					<p>{`${content()}`}</p>
-					<div class="link">
-						<span>Source:</span> <a href={`${link()}`}>Wikipedia</a>
-						<svg xmlns="http://www.w3.org/2000/svg" width="12" height="12">
-							<path
-								fill="#FFF"
-								d="M11.34.66C10.9.22 10.37 0 9.75 0h-7.5C1.63 0 1.1.22.66.66.22 1.1 0 1.63 0 2.25v7.5c0 .62.22 1.15.66 1.59.44.44.97.66 1.59.66h7.5c.62 0 1.15-.22 1.59-.66.44-.44.66-.97.66-1.59v-7.5c0-.62-.22-1.15-.66-1.59zM10 6.25a.467.467 0 01-.305.46.544.544 0 01-.195.04.465.465 0 01-.352-.149L8.023 5.476 3.852 9.648a.481.481 0 01-.352.149.48.48 0 01-.352-.149l-.796-.797a.48.48 0 01-.149-.351.48.48 0 01.149-.352l4.172-4.172-1.125-1.125c-.162-.15-.198-.333-.11-.546A.467.467 0 015.75 2H9.5c.135 0 .253.05.352.148A.48.48 0 0110 2.5v3.75z"
-								opacity=".5"
-							/>
-						</svg>
+				<div id="planet-parent-info">
+					<div id="planet-info">
+						<h2>{`${name()}`}</h2>
+						<p>{`${content()}`}</p>
+						<div class="link">
+							<span>Source:</span>{" "}
+							<a href={`${link()}`}>
+								Wikipedia
+								<svg xmlns="http://www.w3.org/2000/svg" width="12" height="12">
+									<path
+										fill="#FFF"
+										d="M11.34.66C10.9.22 10.37 0 9.75 0h-7.5C1.63 0 1.1.22.66.66.22 1.1 0 1.63 0 2.25v7.5c0 .62.22 1.15.66 1.59.44.44.97.66 1.59.66h7.5c.62 0 1.15-.22 1.59-.66.44-.44.66-.97.66-1.59v-7.5c0-.62-.22-1.15-.66-1.59zM10 6.25a.467.467 0 01-.305.46.544.544 0 01-.195.04.465.465 0 01-.352-.149L8.023 5.476 3.852 9.648a.481.481 0 01-.352.149.48.48 0 01-.352-.149l-.796-.797a.48.48 0 01-.149-.351.48.48 0 01.149-.352l4.172-4.172-1.125-1.125c-.162-.15-.198-.333-.11-.546A.467.467 0 015.75 2H9.5c.135 0 .253.05.352.148A.48.48 0 0110 2.5v3.75z"
+										opacity=".5"
+									/>
+								</svg>
+							</a>
+						</div>
+					</div>
+					<div class="tabs" id={`${name()}`}>
+						<button onClick={() => setSection("overview")} id={section() === "overview" ? "active" : ""}>
+							<span>01</span> overview
+						</button>
+						<button onClick={() => setSection("structure")} id={section() === "structure" ? "active" : ""}>
+							<span>02</span> structure
+						</button>
+						<button onClick={() => setSection("surface")} id={section() === "surface" ? "active" : ""}>
+							<span>03</span> surface
+						</button>
 					</div>
 				</div>
 				<div id="planet-stats">
