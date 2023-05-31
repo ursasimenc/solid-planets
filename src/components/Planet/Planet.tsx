@@ -136,7 +136,7 @@ export default function Planet(props: any) {
 	};
 
 	return (
-		<div id="planet">
+		<main id="planet">
 			<div class="mobile-tabs" id={`${name()}`}>
 				<button onClick={() => setSection("overview")} id={section() === "overview" ? "button-active" : "nonactive"}>
 					overview
@@ -206,6 +206,6 @@ export default function Planet(props: any) {
 					</div>
 				</div>
 			</div>
-		</div>
+		</main>
 	);
 }
