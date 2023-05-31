@@ -31,8 +31,7 @@ body {
 
 #planet {
 	@include size(100%, 100%);
-	@include flex(space-between, center, 0, column);
-	max-height: calc(100vh - 80px);
+
 	overflow: auto;
 	position: absolute;
 	bottom: 0;
@@ -52,7 +51,6 @@ body {
 		.geology {
 			@include size(100px, auto);
 			position: absolute;
-			bottom: 5rem;
 		}
 	}
 	#planet-content {
@@ -96,7 +94,7 @@ body {
 	}
 }
 
-@media screen and (min-width: 679px) and (max-width: 1024px) {
+@media screen and (min-width: 679px) {
 	#planet {
 		max-height: calc(100% - 120px);
 	}
@@ -104,114 +102,173 @@ body {
 		display: none;
 	}
 
-	#planet-info {
-		@include size(50%, 100%);
-		@include flex(start, start, 1rem, column);
+	#planet-content {
+		.planet-top {
+			@include flex(space-between, center, 1rem, column);
+			height: calc(100vh - 275px);
 
-		p {
-			text-align: left;
-			max-width: 90%;
-			font-size: 11px;
+			#planet-parent-info {
+				@include flex(space-between, center, 1rem);
+				margin-inline: 3rem;
+				#planet-info {
+					@include size(50%, 100%);
+					@include flex(start, start, 1rem, column);
+
+					p {
+						text-align: left;
+						max-width: 90%;
+						font-size: 11px;
+					}
+
+					.link {
+						@include flex(start, center, 1rem);
+					}
+				}
+
+				.tabs {
+					@include flex(center, end, 0.75rem, column);
+
+					button {
+						cursor: pointer;
+						position: relative;
+						background-color: transparent;
+						letter-spacing: 1.93px;
+						font-size: 9px;
+						font-weight: 700;
+						text-transform: uppercase;
+						color: $color-text;
+						outline: 1px solid rgba(white, 0.2);
+						outline-offset: -1px;
+						border: none;
+						padding-inline: 1rem;
+
+						@include flex(start, center, 1rem);
+						&:hover {
+							color: $color-white;
+							background-color: rgba(white, 0.2);
+							outline: 1px solid rgba(white, 0);
+						}
+
+						span {
+							font-weight: 700;
+							font-size: 12px;
+							letter-spacing: 2.57px;
+							text-transform: uppercase;
+							color: rgba(white, 0.5);
+						}
+
+						&#active {
+							@include transition(background-color);
+							outline: none;
+						}
+					}
+					&#Mercury button#active {
+						background-color: $color-mercury;
+					}
+
+					&#Venus button#active {
+						background-color: $color-venus;
+					}
+
+					&#Earth button#active {
+						background-color: $color-earth;
+					}
+
+					&#Mars button#active {
+						background-color: $color-mars;
+					}
+
+					&#Jupiter button#active {
+						background-color: $color-jupiter;
+					}
+
+					&#Saturn button#active {
+						background-color: $color-saturn;
+					}
+
+					&#Uranus button#active {
+						background-color: $color-uranus;
+					}
+
+					&#Neptune button#active {
+						background-color: $color-neptune;
+					}
+				}
+			}
 		}
 
-		.link {
+		#planet-stats {
+			@include size(100%, fit-content);
 			@include flex(start, center, 1rem);
+
+			.stat {
+				border: 1px solid rgba(white, 0.2);
+				@include flex(space-between, start, 0.5rem, column);
+				@include size(100%, 100%);
+			}
 		}
 	}
+}
 
-	.tabs {
-		@include size(50%, 100%);
-		@include flex(center, end, 0.75rem, column);
+@media screen and (min-width: 679px) and (max-width: 1099px) {
+	#planet {
+		max-height: calc(100% - 120px);
+	}
+	.mobile-tabs {
+		display: none;
+	}
 
-		button {
-			cursor: pointer;
-			position: relative;
-			background-color: transparent;
-			letter-spacing: 1.93px;
-			font-size: 9px;
-			font-weight: 700;
-			text-transform: uppercase;
-			color: $color-text;
-			outline: 1px solid rgba(white, 0.2);
-			outline-offset: -1px;
-			border: none;
-			padding-inline: 1rem;
-			@include size(281px, 40px);
+	#planet-content {
+		.planet-top {
+			#planet-parent-info {
+				@include flex(space-between, center, 1rem);
+				margin-inline: 3rem;
+				#planet-info {
+					@include size(50%, 100%);
+					@include flex(start, start, 1rem, column);
+
+					p {
+						text-align: left;
+						max-width: 90%;
+						font-size: 11px;
+						height: 150px;
+					}
+
+					.link {
+						@include flex(start, center, 1rem);
+					}
+				}
+
+				.tabs {
+					@include size(50%, 100%);
+
+					button {
+						@include size(281px, 40px);
+					}
+				}
+			}
+		}
+
+		#planet-stats {
+			@include size(100%, fit-content);
 			@include flex(start, center, 1rem);
-			&:hover {
-				color: $color-white;
-				background-color: rgba(white, 0.2);
-				outline: 1px solid rgba(white, 0);
-			}
+			margin-block: 1.5rem;
+			padding: 0rem 2.5rem;
 
-			span {
-				font-weight: 700;
-				font-size: 12px;
-				letter-spacing: 2.57px;
-				text-transform: uppercase;
-				line-height: 25px;
-				color: rgba(white, 0.5);
-			}
-
-			&#active {
-				@include transition(background-color);
-				outline: none;
+			.stat {
+				border: 1px solid rgba(white, 0.2);
+				@include flex(space-between, start, 0.5rem, column);
+				@include size(100%, 100%);
+				padding: 1rem;
 			}
 		}
-		&#Mercury button#active {
-			background-color: $color-mercury;
-		}
-
-		&#Venus button#active {
-			background-color: $color-venus;
-		}
-
-		&#Earth button#active {
-			background-color: $color-earth;
-		}
-
-		&#Mars button#active {
-			background-color: $color-mars;
-		}
-
-		&#Jupiter button#active {
-			background-color: $color-jupiter;
-		}
-
-		&#Saturn button#active {
-			background-color: $color-saturn;
-		}
-
-		&#Uranus button#active {
-			background-color: $color-uranus;
-		}
-
-		&#Neptune button#active {
-			background-color: $color-neptune;
-		}
 	}
-
-	#planet-stats {
-		@include size(100%, fit-content);
-		@include flex(start, center, 1rem);
-		margin-block: 1.5rem;
-		padding: 0rem 2.5rem;
-
-		.stat {
-			border: 1px solid rgba(white, 0.2);
-			@include flex(space-between, start, 0.5rem, column);
-			@include size(100%, 100%);
-			padding: 1rem;
-		}
-	}
-
-	#planet-parent-info {
-		@include flex(space-between, center, 1rem);
-		margin-inline: 3rem;
-	}
-
 	#planet-image {
-		aspect-ratio: 1/1;
+		aspect-ratio: 3/2;
+
+		.geology {
+			bottom: 5rem;
+		}
 	}
 
 	img#Mercury {
@@ -251,6 +308,118 @@ body {
 
 	img#Neptune {
 		width: 285px;
+		aspect-ratio: 1/1;
+	}
+}
+
+@media screen and (min-width: 1100px) {
+	#planet {
+		max-height: calc(100% - 120px);
+		@include flex(center, start, 0);
+	}
+	.mobile-tabs {
+		display: none;
+	}
+
+	#planet-content {
+		max-width: 1200px;
+		.planet-top {
+			@include flex(space-between, center, 1rem);
+			@include size(100%, fit-content);
+			#planet-parent-info {
+				@include flex(space-between, center, 2.5rem, column);
+				@include size(300px, fit-content);
+				margin-inline: 3rem;
+				#planet-info {
+					@include size(100%, 100%);
+					@include flex(start, start, 2.5rem, column);
+
+					p {
+						text-align: left;
+						max-width: 100%;
+						font-size: 14px;
+						height: 150px;
+					}
+
+					h2 {
+						font-size: 80px;
+					}
+
+					.link {
+						@include flex(start, center, 1rem);
+					}
+				}
+
+				.tabs {
+					@include size(100%, 100%);
+
+					button {
+						@include size(300px, 48px);
+					}
+				}
+			}
+		}
+
+		#planet-stats {
+			@include size(100%, fit-content);
+			@include flex(start, center, 1rem);
+			padding: 0rem 2.75rem;
+
+			.stat {
+				border: 1px solid rgba(white, 0.2);
+				@include flex(space-between, start, 0.5rem, column);
+				@include size(100%, 100%);
+				padding: 1rem;
+			}
+		}
+	}
+
+	#planet-image {
+		height: 750px;
+		aspect-ratio: 1/1;
+
+		.geology {
+			bottom: 10rem;
+		}
+	}
+
+	img#Mercury {
+		width: 290px;
+		aspect-ratio: 1/1;
+	}
+
+	img#Venus {
+		width: 400px;
+		aspect-ratio: 1/1;
+	}
+
+	img#Earth {
+		width: 450px;
+		aspect-ratio: 1/1;
+	}
+
+	img#Mars {
+		width: 336px;
+		aspect-ratio: 1/1;
+	}
+
+	img#Jupiter {
+		width: 582px;
+		aspect-ratio: 1/1;
+	}
+
+	img#Saturn {
+		width: 666px;
+		aspect-ratio: 1/1;
+	}
+
+	img#Uranus {
+		width: 458px;
+		aspect-ratio: 1/1;
+	}
+
+	img#Neptune {
+		width: 450px;
 		aspect-ratio: 1/1;
 	}
 }
@@ -353,6 +522,10 @@ body {
 
 	#planet-image {
 		aspect-ratio: 1/1;
+
+		.geology {
+			bottom: 2.25rem;
+		}
 	}
 
 	img#Mercury {
