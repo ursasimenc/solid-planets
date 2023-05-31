@@ -1,34 +1,38 @@
-## Usage
+# Frontend Mentor - Password generator app solution
 
-Those templates dependencies are maintained via [pnpm](https://pnpm.io) via `pnpm up -Lri`.
+This is a solution to the [Planets fact site on Frontend Mentor](https://www.frontendmentor.io/challenges/planets-fact-site-gazqN8w_fW).
 
-This is the reason you see a `pnpm-lock.yaml`. That being said, any package manager will work. This file can be safely be removed once you clone a template.
+## Table of contents
 
-```bash
-$ npm install # or pnpm install or yarn install
-```
+- [The challenge](#the-challenge)
+- [Screenshot](#screenshot)
+- [Links](#links)
 
-### Learn more on the [Solid Website](https://solidjs.com) and come chat with us on our [Discord](https://discord.com/invite/solidjs)
+## The challenge
 
-## Available Scripts
+Users should be able to:
 
-In the project directory, you can run:
+- View the optimal layout for each of the website's pages depending on their device's screen size
+- See hover states for all interactive elements on the page
+- View each page and be able to toggle between the tabs to see new information
 
-### `npm dev` or `npm start`
+The solution was built using Solid.js, TypeScript and Sass.
 
-Runs the app in the development mode.<br>
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## Screenshots
 
-The page will reload if you make edits.<br>
+Screen:
 
-### `npm run build`
+![Screen](./src/assets/screenshots/desktop.png)
 
-Builds the app for production to the `dist` folder.<br>
-It correctly bundles Solid in production mode and optimizes the build for the best performance.
+Tablet:
 
-The build is minified and the filenames include the hashes.<br>
-Your app is ready to be deployed!
+![Tablet](./src/assets/screenshots/tablet.png)
 
-## Deployment
+Mobile:
 
-You can deploy the `dist` folder to any static host provider (netlify, surge, now, etc.)
+![Mobile](./src/assets/screenshots/mobile.png)
+
+## Links
+
+- [GitHub Repo](https://github.com/ursasimenc/solid-planets)
+- [Demo](https://solid-planets.netlify.app)
