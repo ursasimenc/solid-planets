@@ -16,7 +16,7 @@ export default function Header(props: any) {
 
 	return (
 		<header>
-			<nav>
+			<nav role="navigation">
 				<div class="top">
 					<h1>the planets</h1>
 					<div class="hamburger" onClick={showMobileMenu}>
@@ -29,49 +29,49 @@ export default function Header(props: any) {
 				</div>
 				<div class="bottom">
 					<ul>
-						<li onClick={() => clickLink(0)} id="Mercury">
+						<li onClick={() => clickLink(0)} id="Mercury-link">
 							Mercury
 							<svg xmlns="http://www.w3.org/2000/svg" width="6" height="8">
 								<path fill="none" stroke="#FFF" opacity=".4" d="M1 0l4 4-4 4" />
 							</svg>
 						</li>
-						<li onClick={() => clickLink(1)} id="Venus">
+						<li onClick={() => clickLink(1)} id="Venus-link">
 							Venus
 							<svg xmlns="http://www.w3.org/2000/svg" width="6" height="8">
 								<path fill="none" stroke="#FFF" opacity=".4" d="M1 0l4 4-4 4" />
 							</svg>
 						</li>
-						<li onClick={() => clickLink(2)} id="Earth">
+						<li onClick={() => clickLink(2)} id="Earth-link">
 							Earth
 							<svg xmlns="http://www.w3.org/2000/svg" width="6" height="8">
 								<path fill="none" stroke="#FFF" opacity=".4" d="M1 0l4 4-4 4" />
 							</svg>
 						</li>
-						<li onClick={() => clickLink(3)} id="Mars">
+						<li onClick={() => clickLink(3)} id="Mars-link">
 							Mars
 							<svg xmlns="http://www.w3.org/2000/svg" width="6" height="8">
 								<path fill="none" stroke="#FFF" opacity=".4" d="M1 0l4 4-4 4" />
 							</svg>
 						</li>
-						<li onClick={() => clickLink(4)} id="Jupiter">
+						<li onClick={() => clickLink(4)} id="Jupiter-link">
 							Jupiter
 							<svg xmlns="http://www.w3.org/2000/svg" width="6" height="8">
 								<path fill="none" stroke="#FFF" opacity=".4" d="M1 0l4 4-4 4" />
 							</svg>
 						</li>
-						<li onClick={() => clickLink(5)} id="Saturn">
+						<li onClick={() => clickLink(5)} id="Saturn-link">
 							Saturn
 							<svg xmlns="http://www.w3.org/2000/svg" width="6" height="8">
 								<path fill="none" stroke="#FFF" opacity=".4" d="M1 0l4 4-4 4" />
 							</svg>
 						</li>
-						<li onClick={() => clickLink(6)} id="Uranus">
+						<li onClick={() => clickLink(6)} id="Uranus-link">
 							Uranus
 							<svg xmlns="http://www.w3.org/2000/svg" width="6" height="8">
 								<path fill="none" stroke="#FFF" opacity=".4" d="M1 0l4 4-4 4" />
 							</svg>
 						</li>
-						<li onClick={() => clickLink(7)} id="Neptune">
+						<li onClick={() => clickLink(7)} id="Neptune-link">
 							Neptune
 							<svg xmlns="http://www.w3.org/2000/svg" width="6" height="8">
 								<path fill="none" stroke="#FFF" opacity=".4" d="M1 0l4 4-4 4" />

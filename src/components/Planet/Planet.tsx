@@ -136,7 +136,7 @@ export default function Planet(props: any) {
 	};
 
 	return (
-		<main id="planet">
+		<main id="planet" role="main">
 			<div class="mobile-tabs" id={`${name()}`}>
 				<button onClick={() => setSection("overview")} id={section() === "overview" ? "button-active" : "nonactive"}>
 					overview
