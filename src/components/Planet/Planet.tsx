@@ -136,15 +136,15 @@ export default function Planet(props: any) {
 	};
 
 	return (
-		<main id="planet" role="main">
+		<main id="planet">
 			<div class="mobile-tabs" id={`${name()}`}>
-				<button onClick={() => setSection("overview")} id={section() === "overview" ? "button-active" : "nonactive"}>
+				<button onClick={() => setSection("overview")} id={section() === "overview" ? "button-active" : "nonactive-overview"}>
 					overview
 				</button>
-				<button onClick={() => setSection("structure")} id={section() === "structure" ? "button-active" : "nonactive"}>
+				<button onClick={() => setSection("structure")} id={section() === "structure" ? "button-active" : "nonactive-structure"}>
 					structure
 				</button>
-				<button onClick={() => setSection("surface")} id={section() === "surface" ? "button-active" : "nonactive"}>
+				<button onClick={() => setSection("surface")} id={section() === "surface" ? "button-active" : "nonactive-surface"}>
 					surface
 				</button>
 			</div>
@@ -174,7 +174,7 @@ export default function Planet(props: any) {
 								</a>
 							</div>
 						</section>
-						<div class="tabs" id={`${name()}`}>
+						<div class="tabs" id={`${name()}-tabs`}>
 							<button onClick={() => setSection("overview")} id={section() === "overview" ? "tab-active" : "nonactive"}>
 								<span>01</span> overview
 							</button>

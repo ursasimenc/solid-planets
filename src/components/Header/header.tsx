@@ -1,3 +1,4 @@
+import { Component } from "solid-js";
 import "./header.scss";
 
 export default function Header(props: any) {
@@ -15,7 +16,7 @@ export default function Header(props: any) {
 
 	return (
 		<header>
-			<nav role="navigation">
+			<nav>
 				<div class="top">
 					<h1>the planets</h1>
 					<div class="hamburger" onClick={showMobileMenu}>
