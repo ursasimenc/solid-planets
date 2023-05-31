@@ -148,7 +148,6 @@ export default function Planet(props: any) {
 					surface
 				</button>
 			</div>
-
 			<div id="planet-content">
 				<div class="planet-top">
 					<div id="planet-image">

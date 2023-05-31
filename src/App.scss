@@ -105,11 +105,10 @@ body {
 	#planet-content {
 		.planet-top {
 			@include flex(space-between, center, 1rem, column);
-			height: calc(100vh - 275px);
+			min-height: calc(100vh - 275px);
 
 			#planet-parent-info {
 				@include flex(space-between, center, 1rem);
-				margin-inline: 3rem;
 				#planet-info {
 					@include size(50%, 100%);
 					@include flex(start, start, 1rem, column);
@@ -141,8 +140,8 @@ body {
 						outline-offset: -1px;
 						border: none;
 						padding-inline: 1rem;
-
 						@include flex(start, center, 1rem);
+
 						&:hover {
 							color: $color-white;
 							background-color: rgba(white, 0.2);
@@ -231,7 +230,6 @@ body {
 						text-align: left;
 						max-width: 90%;
 						font-size: 11px;
-						height: 150px;
 					}
 
 					.link {
@@ -253,7 +251,7 @@ body {
 			@include size(100%, fit-content);
 			@include flex(start, center, 1rem);
 			margin-block: 1.5rem;
-			padding: 0rem 2.5rem;
+			padding-inline: 2.5rem;
 
 			.stat {
 				border: 1px solid rgba(white, 0.2);
@@ -326,10 +324,10 @@ body {
 		.planet-top {
 			@include flex(space-between, center, 1rem);
 			@include size(100%, fit-content);
+			padding-inline: 2.75rem;
 			#planet-parent-info {
-				@include flex(space-between, center, 2.5rem, column);
+				@include flex(space-between, end, 2.5rem, column);
 				@include size(300px, fit-content);
-				margin-inline: 3rem;
 				#planet-info {
 					@include size(100%, 100%);
 					@include flex(start, start, 2.5rem, column);
@@ -338,7 +336,6 @@ body {
 						text-align: left;
 						max-width: 100%;
 						font-size: 14px;
-						height: 150px;
 					}
 
 					h2 {
@@ -376,10 +373,10 @@ body {
 
 	#planet-image {
 		height: 750px;
-		aspect-ratio: 1/1;
+		aspect-ratio: 2/3;
 
 		.geology {
-			bottom: 10rem;
+			bottom: 12rem;
 		}
 	}
 
@@ -459,6 +456,9 @@ body {
 		@include size(100%, 52px);
 		@include flex(space-around, center);
 		border-bottom: 1px solid rgba(white, 0.2);
+		position: relative;
+		top: 5rem;
+		z-index: 1;
 
 		button {
 			cursor: pointer;
