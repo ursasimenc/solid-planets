@@ -1,4 +1,3 @@
-import { Component } from "solid-js";
 import "./header.scss";
 
 export default function Header(props: any) {

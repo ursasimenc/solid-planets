@@ -157,7 +157,7 @@ export default function Planet(props: any) {
 						</Show>
 					</div>
 					<div id="planet-parent-info">
-						<div id="planet-info">
+						<section id="planet-info">
 							<h2>{`${name()}`}</h2>
 							<p>{`${content()}`}</p>
 							<div class="link">
@@ -173,7 +173,7 @@ export default function Planet(props: any) {
 									</svg>
 								</a>
 							</div>
-						</div>
+						</section>
 						<div class="tabs" id={`${name()}`}>
 							<button onClick={() => setSection("overview")} id={section() === "overview" ? "tab-active" : "nonactive"}>
 								<span>01</span> overview
@@ -187,7 +187,7 @@ export default function Planet(props: any) {
 						</div>
 					</div>
 				</div>
-				<div id="planet-stats">
+				<section id="planet-stats">
 					<div class="stat">
 						<h3>rotation time</h3>
 						<h2>{`${rotation()}`}</h2>
@@ -204,7 +204,7 @@ export default function Planet(props: any) {
 						<h3>average temp.</h3>
 						<h2>{`${temperature()}`}</h2>
 					</div>
-				</div>
+				</section>
 			</div>
 		</main>
 	);
