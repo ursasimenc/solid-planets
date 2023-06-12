@@ -1,4 +1,4 @@
-# Frontend Mentor - Password generator app solution
+# Frontend Mentor - Planets app solution
 
 This is a solution to the [Planets fact site on Frontend Mentor](https://www.frontendmentor.io/challenges/planets-fact-site-gazqN8w_fW).
 
